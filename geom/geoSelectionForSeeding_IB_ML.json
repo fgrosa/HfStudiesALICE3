@@ -1,0 +1,42 @@
+[
+    {
+        "NAME": "InnerPixels::Barrel",
+        "layer": 2,
+        "volume": 17
+    },
+    {
+        "NAME": "InnerPixels::Barrel",
+        "layer": 4,
+        "volume": 17
+    },
+    {
+        "NAME": "InnerPixels::Barrel",
+        "layer": 6,
+        "volume": 17
+    },
+    {
+        "NAME": "OuterPixels::Barrel",
+        "layer": 2,
+        "volume": 22
+    },
+    {
+        "NAME": "OuterPixels::Barrel",
+        "layer": 4,
+        "volume": 22
+    },
+    {
+        "NAME": "OuterPixels::Barrel",
+        "layer": 6,
+        "volume": 22
+    },
+    {
+        "NAME": "OuterPixels::Barrel",
+        "layer": 10,
+        "volume": 22
+    },
+    {
+        "NAME": "OuterPixels::Barrel",
+        "layer": 12,
+        "volume": 22
+    }
+]

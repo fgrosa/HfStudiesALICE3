@@ -1,0 +1,50 @@
+simulation:
+  n_events: 1000
+  n_threads: 20
+  rnd_seed: 42
+  enable_material: true
+  diamond: [0.00125, 0.00125, 0.000125, 60.] # mm
+  b_field: 2. # used only if b_filed_map empty
+  b_field_map: "" #bfield/fieldMap_Alice3_with_absorber_2T_solenoid_5-9-23.txt
+  geometry_file: geom/o2sim_geometry.gdml
+  digi_file: digits/digi-smearing-config_no_TOFs.json
+  pythia:
+    enable: true
+    config: pythia_cfg/pythia_softqcd.cfg
+    pileup: 1
+  gun:
+    enable: false
+    pdg: 511
+    multiplicity: 1
+    pt: [0., 10.]
+    eta: [-4., 4.]
+  reader: # we read pregenerated files only
+    enable: false
+    inputdir: "outputs/simulation"
+  transport: "Fatras" # options: Fatras, Geant4
+  outputdir: "outputs/simulation/softqcd"
+
+reconstruction:
+  seeding:
+    algorithm: GridTriplet # options: Default, GridTriplet
+    layers: VD # options: VD, ML3, MLall, VDML
+    collision_region: 250 # mm
+    max_seeds_per_spm: 2 # for Pb-Pb > 2
+    sigma_scattering: 5 # How many sigmas of scattering to include in seeds
+    radlen: 0.05 # radiation length per seed
+    pt_min: 0.08 # GeV/c (cannot be smaller than this because of the seeding radius)
+    imppar_max: 2.0 # mm
+    costheta_max: 27.2899
+  tracking:
+    n_meas_min: 7
+    n_hits_shared_max: 2
+    chi2_outlier_max: 100
+    chi2_meas_max: 45
+    meas_per_surf_max: 1
+    seed_deduplication: true
+    stay_on_seed: false
+    two_way_ckf: true
+  ambiguity_resolution:
+    n_hits_shared_max: 2
+    n_meas_min: 7
+  outputdir: "outputs/reconstruction/softqcd"
