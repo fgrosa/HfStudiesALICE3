@@ -6,6 +6,9 @@ Repository for HF performance studies with ACTS for ALICE3
 mkdir -p alice
 cd alice
 aliBuild init O2@dev
+```
+Currently a small modification is needed in `Detectors/Upgrades/ALICE3/TRK/reconstruction/CMakeLists.txt`, i.e. lines `21` and `50` should be commented out.
+```
 git clone https://gitlab.cern.ch/hepmc/HepMC3.git
 aliBuild build O2 --defaults o2-acts
 ```
