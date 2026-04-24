@@ -13,6 +13,7 @@ simulation:
     config: pythia_cfg/pythia_softqcd.cfg
     config_pileup: pythia_cfg/pythia_softqcd.cfg
     pileup: 1
+    search_hf_orig_up_to_quark: false
   gun:
     enable: false
     pdg: 511

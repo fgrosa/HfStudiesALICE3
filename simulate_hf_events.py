@@ -142,10 +142,12 @@ def run_simulation(config_file):
                 ),
                 mean=acts.Vector4(0, 0, 0, 0),
             ),
+            # printPythiaEventListing="long",
             rnd=rnd,
             logLevel=acts.logging.INFO,
             outputDirRoot=cfg["simulation"]["outputdir"],
-            writeHepMC3=pathlib.Path(os.path.join(cfg["simulation"]["outputdir"], "events.hepmc3"))
+            writeHepMC3=pathlib.Path(os.path.join(cfg["simulation"]["outputdir"], "events.hepmc3")),
+            searchUpToHfQuark=cfg["simulation"]["pythia"]["search_hf_orig_up_to_quark"]
         )
     if cfg["simulation"]["gun"]["enable"]:
         # list of available particles: https://github.com/acts-project/acts/blob/main/Core/include/Acts/Definitions/PdgParticle.hpp#L21
